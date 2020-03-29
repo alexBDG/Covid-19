@@ -83,4 +83,5 @@ Ces fonction sont intégrées dans un serveur dans le dossier `app`.
 ## Modules Python utilisés
 
 os, datetime, Pandas, seaborn, matplotlib
+
 Flask, Flask-SQLAlchemy, Flask-Migrate, Flask-Login, Flask-WTF, WTForms, Werkzeug 
