@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <form action="/recherche/" method="post"> 
+
+        <div class="player">
+            <label for="idDep">Code du département :</label>
+            <input type="number" id="idDep" name="idDep" required/>
+        </div>
+
+        <div class="submit">
+            <input type="submit"/>
+            <input type="reset"/>
+        </div>
+
+    </form>
+        
+    <br>
+    <h2>Ou :</h2>   
+    <br>
+    
+    <form action="/recherche/" method="post"> 
+
+        <div class="player">
+            <label for="idReg">Code de la région :</label>
+            <input type="number" id="idReg" name="idReg" required/>
+        </div>
+
+        <div class="submit">
+            <input type="submit"/>
+            <input type="reset"/>
+        </div>
+
+    </form>
+        
+    <br>
+    <h2>Ou :</h2>
+    <br>
+    
+    <form action="/recherche/" method="post"> 
+
+        <div class="player">
+            <label for="idPays">France entière :</label>
+        </div>
+
+        <div class="submit">
+            <input type="submit"/>
+            <input type="reset"/>
+        </div>
+
+    </form>
+    
+{% endblock %}
