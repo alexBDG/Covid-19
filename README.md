@@ -73,6 +73,11 @@ affichePays()
 ![affichePays](app/static/res/affichePays.png)
 
 
+```python
+sosMedecins()
+```
+![affichePays](app/static/res/afficheSOSPays.png)
+
 
 ## Serveur de développement Flask
 
