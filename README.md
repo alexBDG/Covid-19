@@ -1,5 +1,5 @@
 # Covid-19
-Analyse des données sur le Covid-19 fournies par Santé Publique France
+Analyse des données sur le Covid-19 fournies par Santé Publique France et l'université Johns Hopkins.
 
 ![logo](app/static/img/logo.png)
 
@@ -35,19 +35,28 @@ Récupérées sur le site de l'INSEE. Données parues le 26/02/2020 et correspon
 Lien : https://www.insee.fr/fr/information/4316069
 
 
+- ### Données du mondiales de l'université Johns Hopkins
+
+Récupérées sur le dépôt GitHub, et mises à jour quotidiennement.
+
+Lien : https://github.com/CSSEGISandData/COVID-19
+
+
 
 ## Explications
 
 Le fichier `data_visualisation.ipynb` comporte, entre autres, les fonctions :
-- *afficheDepartement*, qui donne des informations propres à un département.
+- *afficheDepartement*, qui donne des informations propres à un département (en données cumulées et journalières).
 - *departementVsTous*, qui positionne un département par rapport aux autres.
-- *afficheRegion*, qui donne des informations propres à une région.
+- *afficheRegion*, qui donne des informations propres à une région (en données cumulées et journalières).
 - *regionVsTous*, qui positionne une région par rapport aux autres.
-- *affichePays*, qui donne des informations propres au pays.
+- *affichePays*, qui donne des informations propres au pays (en données cumulées et journalières).
+- *sosMedecins*, qui donne des informations journalières sur les urgences totale et du Covid et les interventions SOS Médecins, pour les départements, régions ou pays.
+- *afficheMonde*, qui donne des informations d'évolution de chaque pays.
 
 
 
-## Exemple
+## Exemples
 
 ```python
 idDep = 75
@@ -76,7 +85,14 @@ affichePays()
 ```python
 sosMedecins()
 ```
-![affichePays](app/static/res/afficheSOSPays.png)
+![sosMedecins](app/static/res/afficheSOSPays.png)
+
+
+```python
+afficheMonde()
+```
+![afficheMonde](app/static/res/afficheMonde.png)
+
 
 
 ## Serveur de développement Flask
