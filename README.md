@@ -35,7 +35,7 @@ Récupérées sur le site de l'INSEE. Données parues le 26/02/2020 et correspon
 Lien : https://www.insee.fr/fr/information/4316069
 
 
-- ### Données du mondiales de l'université Johns Hopkins
+- ### Données mondiales de l'université Johns Hopkins
 
 Récupérées sur le dépôt GitHub, et mises à jour quotidiennement.
 
