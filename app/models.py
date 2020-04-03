@@ -12,8 +12,10 @@ from flask_login import UserMixin
 from app import db, login
 
 
-
-
+# Combien d'utilisateurs enregistrés :
+# db.session.query(User).count()
+# Affiche tous les utilisateurs enregistrés :
+# db.session.query(User).all()
 
 class User(UserMixin, db.Model):
     id            = db.Column(db.Integer, primary_key=True)
@@ -42,6 +44,19 @@ class Post(db.Model):
     def __repr__(self):
         return '<Post {}>'.format(self.body)
     
+    
+    
+class Ip(db.Model):
+    id           = db.Column(db.Integer, primary_key=True)
+    ip_address   = db.Column(db.String(64))
+    time_visite  = db.Column(db.DateTime, index=True, default=datetime.now())
+    agent        = db.Column(db.String(128))
+
+    def __repr__(self):
+        return '<Ip {}>'.format(self.ip_address)
+    
+    def set_agent(self, agent):
+        self.agent = agent
     
     
     

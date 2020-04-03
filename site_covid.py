@@ -6,12 +6,12 @@ Created on Fri Mar 27 10:33:39 2020
 """
 
 from app import app, db
-from app.models import User, Post
+from app.models import User, Post, Ip
 
 
 @app.shell_context_processor
 def make_shell_context():
-    return {'db': db, 'User': User, 'Post': Post}
+    return {'db': db, 'User': User, 'Post': Post, 'Ip': Ip}
 
 
 
@@ -51,16 +51,20 @@ if __name__ == '__main__':
     flask db init
     flask db migrate -m "users table"
     flask db upgrade
+    
+    # Si mise à jour de la base :
+    flask db migrate
+    flaks db upgrade
     """
     
     """
     flask run -h '0.0.0.0' -p 8888 --cert=cert.pem --key=key.pem
     """
     
-    app.run(debug=False,
+    app.run(debug=False),
 #            host="0.0.0.0",
-#            port=8888,
+#            port=8888)#,
 #            ssl_context=('cert.pem', 'key.pem'))
-            ssl_context=app.context)
+#            ssl_context=app.context)
     
     

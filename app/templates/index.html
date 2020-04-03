@@ -3,42 +3,47 @@
 {% block content %}
     
     <p>Ce site est dédié à l'analyse des données sur le Covid-19 fournies par Santé Publique France</p>
-
+    <p>Vous êtes le {{ visiteurs }}-ième visiteur !</p>
+    <br>
+    
+    <br>
 
     <h2>Les données</h2>
     
-    <ul>
-    
-        <li>
-            <h3>Données hospitalières relatives à l'épidémie de COVID-19</h3>
-            <p>Récupérées sur le site des données publiques françaises et provenant de Santé Publique France, mises à jour quotidiennement.</p>
-            <p>Lien : <a href="https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/">data.gouv</a></p>
-        </li>
-        
-        <li>
-            <h3>Données des urgences hospitalières et de SOS médecins relatives à l'épidémie de COVID-19</h3>
-            <p>Récupérées sur le site des données publiques françaises et provenant de Santé Publique France, mises à jour quotidiennement.</p>
-            <p>Lien : <a href="https://www.data.gouv.fr/fr/datasets/donnees-des-urgences-hospitalieres-et-de-sos-medecins-relatives-a-lepidemie-de-covid-19/">data.gouv</a></p>
-        </li>
-        
-        <li>
-            <h3>Données liées au recencement de la population française</h3>
-            <p>Récupérées sur le site de l'INSEE. Données parues le 30/12/2019 et correspondantes à la population française en 2017, réparties par département.</p>
-            <p>Lien : <a href="https://www.insee.fr/fr/statistiques/4265429?sommaire=4265511">insee</a></p>
-        </li>
-        
-        <li>
-            <h3>Données du découpage des communes française</h3>
-            <p>Récupérées sur le site de l'INSEE. Données parues le 26/02/2020 et correspondantes au code officiel géographique au premier janvier 2020.</p>
-            <p>Lien : <a href="https://www.insee.fr/fr/information/4316069">insee</a></p>
-        </li>
-        
-    </ul>
+    <h3><span>&#8226;</span> Données hospitalières relatives à l'épidémie de COVID-19</h3>
+    <p>Récupérées sur le site des données publiques françaises et provenant de Santé Publique France, mises à jour quotidiennement.</p>
+    <p>Lien : <a href="https://www.data.gouv.fr/fr/datasets/donnees-hospitalieres-relatives-a-lepidemie-de-covid-19/">data.gouv</a></p>
+    <br>
+      
 
+    <h3><span>&#8226;</span> Données des urgences hospitalières et de SOS médecins relatives à l'épidémie de COVID-19</h3> 
+    <p>Récupérées sur le site des données publiques françaises et provenant de Santé Publique France, mises à jour quotidiennement.</p>
+    <p>Lien : <a href="https://www.data.gouv.fr/fr/datasets/donnees-des-urgences-hospitalieres-et-de-sos-medecins-relatives-a-lepidemie-de-covid-19/">data.gouv</a></p>
+    <br>
+   
+        
+    <h3><span>&#8226;</span> Données liées au recencement de la population française</h3>
+    <p>Récupérées sur le site de l'INSEE. Données parues le 30/12/2019 et correspondantes à la population française en 2017, réparties par département.</p>
+    <p>Lien : <a href="https://www.insee.fr/fr/statistiques/4265429?sommaire=4265511">insee</a></p>
+    <br>
+    
+        
+    <h3><span>&#8226;</span> Données du découpage des communes française</h3>
+    <p>Récupérées sur le site de l'INSEE. Données parues le 26/02/2020 et correspondantes au code officiel géographique au premier janvier 2020.</p>
+    <p>Lien : <a href="https://www.insee.fr/fr/information/4316069">insee</a></p>
+    <br>
+    
+        
+    <h3><span>&#8226;</span> Données du mondiales de l'université Johns Hopkins</h3>
+    <p>Récupérées sur le dépôt GitHub, et mises à jour quotidiennement.</p>
+    <p>Lien : <a href="https://github.com/CSSEGISandData/COVID-19">insee</a></p>
+    <br>
+    
+    <br>
 
     <h2>Explications</h2>
 
-    <p>En cliquant sur l'onglet de <a href= "/recherche">recherche par département</a>, vous aurez à renseigner le code correspondant à celui que vous souhaitez consulter.</p>
+    <p>En cliquant sur l'onglet <a href= "/france">France</a>, vous aurez à renseigner le département ou la région que vous souhaitez consulter.</p>
 
 
 {% endblock %}

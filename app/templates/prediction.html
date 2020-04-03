@@ -8,8 +8,16 @@
         
         <div id="imgGeo">
         
-            <img src="{{ url_for('static', filename='res/afficheDepartement-{0}.png'.format(idDep)) }}" class="imgGeo"/>
+            <h2>Données cumulées :</h2>
+        
+            <img src="{{ url_for('static', filename='res/afficheDepartementCumuler-{0}.png'.format(idDep)) }}" class="imgGeo"/>
             <img src="{{ url_for('static', filename='res/departementVsTous-{0}.png'.format(idDep)) }}" class="imgGeo"/>
+        
+            <br><br>
+            <h2>Données journalières :</h2>
+            
+            <img src="{{ url_for('static', filename='res/afficheDepartementJournalier-{0}.png'.format(idDep)) }}" class="imgGeo"/>
+            <img src="{{ url_for('static', filename='res/afficheSOSDepartement-{0}.png'.format(idDep)) }}" class="imgGeo"/>
             
         </div>
     
@@ -19,18 +27,44 @@
         
         <div id="imgGeo">
         
-            <img src="{{ url_for('static', filename='res/afficheRegion-{0}.png'.format(idReg)) }}" class="imgGeo"/>
+            <h2>Données cumulées :</h2>
+        
+            <img src="{{ url_for('static', filename='res/afficheRegionCumuler-{0}.png'.format(idReg)) }}" class="imgGeo"/>
             <img src="{{ url_for('static', filename='res/regionVsTous-{0}.png'.format(idReg)) }}" class="imgGeo"/>
+        
+            <br><br>
+            <h2>Données journalières :</h2>
+            
+            <img src="{{ url_for('static', filename='res/afficheRegionJournalier-{0}.png'.format(idReg)) }}" class="imgGeo"/>
+            <img src="{{ url_for('static', filename='res/afficheSOSRegion-{0}.png'.format(idReg)) }}" class="imgGeo"/>
             
         </div>
     
-    {% else %}
+    {% elif idPays|length>0 %}
     
         <h1>Pays : {{ nomPays|capitalize }}</h1>
         
         <div id="imgGeo">
         
-            <img src="{{ url_for('static', filename='res/affichePays.png') }}" class="imgGeo"/>
+            <h2>Données cumulées :</h2>
+        
+            <img src="{{ url_for('static', filename='res/affichePaysCumuler-{0}.png'.format(idPays)) }}" class="imgGeo"/>
+        
+            <br><br>
+            <h2>Données journalières :</h2>
+            
+            <img src="{{ url_for('static', filename='res/affichePaysJournalier-{0}.png'.format(idPays)) }}" class="imgGeo"/>
+            <img src="{{ url_for('static', filename='res/afficheSOSPays-{0}.png'.format(idPays)) }}" class="imgGeo"/>
+            
+        </div>
+        
+    {% else %}
+    
+        <h1>Monde entier</h1>
+        
+        <div id="imgGeo">
+        
+            <img src="{{ url_for('static', filename='res/afficheMonde.png') }}" class="imgGeo"/>
             
         </div>
     
@@ -40,12 +74,12 @@
     {% if idReg*idDep<0 %}
     
         <br>
-    
+        
         <h1>Plus d'informations</h1>
 
         {% if idDep>0 %}
     
-            <form action="/recherchebis/" method="post"> 
+            <form action="/francebis/" method="post"> 
         
                 <div class="player">
                     <label for="idPays">Voir la région</label>
@@ -64,7 +98,7 @@
     
         {% endif %}
         
-        <form action="/recherchebis/" method="post">
+        <form action="/francebis/" method="post">
         
             <div class="player">
                 <label for="idPays">Voir le pays</label>
