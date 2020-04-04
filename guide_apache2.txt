@@ -1,0 +1,16 @@
+# Charger le mode WSGI
+sudo a2enmod wsgi
+
+# Si environnement :
+source venv/bin/activate
+
+# Si on change le fichier *.conf
+sudo a2ensite covid19statsprevisions.com.conf
+
+# Autoriser 
+sudo chown -R www-data:www-data covid19statsprevisions.com
+
+# Recharger Apache
+sudo /etc/init.d/apache2 reload
+# Ou
+sudo systemctl restart apache2

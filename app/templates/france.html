@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <form action="/france/" method="post"> 
+
+        <div class="player">
+            <label for="idDep">Choisir le département : </label>
+            <select id="idDep" name="idDep">
+                {% for choix in choixDep %}
+                    <option value={{ choix[0] }}>{{ choix[0] }} - {{ choix[1] }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit">
+        </div>        
+        
+
+    </form>
+        
+    <br>
+    <h2>Ou :</h2>   
+    <br>
+    
+    <form action="/france/" method="post"> 
+
+        <div class="player">        
+            <label for="idReg">Choisir la région : </label>
+            <select id="idReg" name="idReg">
+                {% for choix in choixReg %}
+                    <option value={{ choix[0] }}>{{ choix[1] }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit">
+        </div>        
+        
+
+    </form>
+        
+    <br>
+    <h2>Ou :</h2>
+    <br>
+    
+    <form action="/france/" method="post"> 
+
+        <div class="player">
+            <label for="idPays">France entière : </label>
+            <input type="submit"/>
+        </div>
+
+    </form>
+    
+{% endblock %}
