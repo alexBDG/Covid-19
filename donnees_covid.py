@@ -3,6 +3,7 @@
 
 
 import os
+import math
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -13,6 +14,8 @@ def autolabel(rects, axe=None, color=None):
     """Attach a text label above each bar in *rects*, displaying its height."""
     for rect in rects:
         height = rect.get_height()
+        if math.isnan(height):
+            continue
         axe.annotate('{0}'.format(int(height)),
                      xy=(rect.get_x() + rect.get_width() / 2, height),
                      xytext=(0, 1),  # 3 points vertical offset
@@ -25,6 +28,8 @@ def autolabel2(rects, axe=None, color=None):
     """Attach a text label above each bar in *rects*, displaying its height."""
     for rect in rects:
         height = rect.get_height()
+        if math.isnan(height):
+            continue
         if height > 9999:
             message = '{0}k'.format(int(height//1000))
         elif height > 999:
@@ -196,7 +201,8 @@ class donneesCovid:
                 etude[["Confirmed", "Deaths", "Recovered", "Active"]] = etude[["Confirmed", "Deaths", "Recovered", "Active"]].astype('int32')
                 etude["Day"] = etude["Country_Region"].apply(lambda x: fnom)
                 self.donnees_monde = pd.concat([self.donnees_monde, etude])
-            
+
+        self.donnees_monde = self.donnees_monde.sort_values(['Day'], ascending=True)
         self.donnees_monde["Day_Count"] = self.donnees_monde["Day"].apply(renommeDate, liste_jours=self.donnees_monde["Day"].unique().tolist())
         self.donnees_monde = self.donnees_monde.reset_index(drop=True)
             
@@ -255,7 +261,7 @@ class donneesCovid:
     
         # Renommage des dates
         etude["jour"] = etude["jour"].apply(dateRenomme)
-        sos_dates = [el for (i, el) in enumerate(etude["jour"].values) if i%3==0]
+        sos_dates = [el for (i, el) in enumerate(etude["jour"].drop(0).values) if i%3==0]
     
         # Initialisation de la figure
         fig = plt.figure(figsize=(2*8,2*5))
@@ -435,7 +441,7 @@ class donneesCovid:
     
         # Renommage des dates
         etude["jour"] = etude["jour"].apply(dateRenomme)
-        sos_dates = [el for (i, el) in enumerate(etude["jour"].unique().tolist()) if i%3==0]
+        sos_dates = [el for (i, el) in enumerate(etude["jour"].unique()) if i%3==0]
 
         # Initialisation de la figure
         fig = plt.figure(figsize=(2*8,2*5))
@@ -507,7 +513,7 @@ class donneesCovid:
         
         # Renommage des dates
         etude["jour"] = etude["jour"].apply(dateRenomme)
-        sos_dates = [el for (i, el) in enumerate(etude["jour"].values) if i%3==0]
+        sos_dates = [el for (i, el) in enumerate(etude["jour"].drop(0).unique()) if i%3==0]
         
         # Initialisation de la figure
         fig = plt.figure(figsize=(2*8,2*5))
@@ -682,7 +688,7 @@ class donneesCovid:
         
         # Renommage des dates
         etude["jour"] = etude["jour"].apply(dateRenomme)
-        sos_dates = [el for (i, el) in enumerate(etude["jour"].values) if i%3==0]
+        sos_dates = [el for (i, el) in enumerate(etude["jour"].unique()) if i%3==0]
     
         # Initialisation de la figure
         fig = plt.figure(figsize=(2*8,2*5))
@@ -747,7 +753,7 @@ class donneesCovid:
         
         # Renommage des dates
         etude["jour"] = etude["jour"].apply(dateRenomme)
-        sos_dates = [el for (i, el) in enumerate(etude["jour"].values) if i%3==0]
+        sos_dates = [el for (i, el) in enumerate(etude["jour"].drop(0).values) if i%3==0]
         
         # Initialisation de la figure
         fig = plt.figure(figsize=(2*8,2*5))
